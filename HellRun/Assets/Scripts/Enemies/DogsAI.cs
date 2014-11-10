@@ -70,7 +70,7 @@ public class DogsAI : MonoBehaviour {
                 {
                     Debug.Log("I am attacking u");
                     speed = 0;
-                    anim.SetBool("canAttack", true);
+                    //anim.SetBool("canAttack", true);
                     player.GetComponent<PlayerHealth>().SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
                     attackTimer += 1f;
                 }
@@ -78,7 +78,7 @@ public class DogsAI : MonoBehaviour {
             }
             else if (Vector2.Distance(transform.position, playerTransform.position) > attackDistance)
             {
-                anim.SetBool("canAttack", false);
+                //anim.SetBool("canAttack", false);
                 
 
             }
