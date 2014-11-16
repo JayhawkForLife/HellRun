@@ -20,8 +20,18 @@ public class BuzzSaw : MonoBehaviour {
 		Debug.Log ("Colliding with an object");
 		if(coll.gameObject.tag == "Player")
 		{
-			Debug.Log("Touching buzzsaw");
+			Debug.Log("Player touching buzzsaw");
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
+		}
+		if (coll.gameObject.tag == "Enemy") 
+		{
+			Debug.Log ("Enemy touching buzzsaw");
+			coll.gameObject.GetComponent<EnemyHealth>().DecrementHealth();
+			int currentHealth = coll.gameObject.GetComponent<EnemyHealth>().GetHealth();
+			if(currentHealth == 0)
+			{
+				coll.gameObject.GetComponent<DogsAI>().isDead = true;
+			}
 		}
 	}
 	

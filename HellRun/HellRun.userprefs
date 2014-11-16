@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Obstacles\BuzzSaw.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\DogsAI.cs">
     <Files>
-      <File FileName="Assets\Scripts\Obstacles\BuzzSaw.cs" Line="6" Column="25" />
-      <File FileName="Assets\Scripts\Player\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\TommyGun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager\HudManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Items\Chest.cs" Line="52" Column="81" />
+      <File FileName="Assets\Scripts\Obstacles\BuzzSaw.cs" Line="24" Column="63" />
+      <File FileName="Assets\Scripts\Player\TommyGun.cs" Line="46" Column="50" />
       <File FileName="Assets\Scripts\Enemies\DogsAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerController.cs" Line="40" Column="13" />
+      <File FileName="Assets\Scripts\Ladder.cs" Line="28" Column="10" />
+      <File FileName="Assets\Scripts\Player\PlayerHealth.cs" Line="55" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
