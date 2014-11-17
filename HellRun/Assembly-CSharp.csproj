@@ -59,7 +59,10 @@
      <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\HudManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\Player.cs" />
+     <Compile Include="Assets\Scripts\Items\Ammo.cs" />
+     <Compile Include="Assets\Scripts\Items\Bomb.cs" />
      <Compile Include="Assets\Scripts\Items\Chest.cs" />
+     <Compile Include="Assets\Scripts\Items\Health.cs" />
      <Compile Include="Assets\Scripts\Ladder.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
      <Compile Include="Assets\Scripts\Obstacles\BuzzSaw.cs" />

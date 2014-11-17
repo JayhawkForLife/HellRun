@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
     private Transform currentPlatform;
     Animator anim;
     PlayerHealth health;
+	TommyGun ammo;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour {
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
         health = gameObject.GetComponent<PlayerHealth>();
+		ammo = gameObject.GetComponent<TommyGun>();
 	}
 	
 	// Update is called once per frame

@@ -10,8 +10,14 @@ public class TommyGun : MonoBehaviour {
     Camera cam;
     public bool canFire { get; private set; }
     float shootingTimer;
+
+	int maxAmmo = 30;
+	int currentAmmo;
+
+
 	// Use this for initialization
 	void Start () {
+		currentAmmo = maxAmmo;
         canFire = true;
         shootingTimer = 0;
 
@@ -29,7 +35,7 @@ public class TommyGun : MonoBehaviour {
         Vector3 worldPos = cam.camera.ScreenToWorldPoint(mousePos);
         transform.LookAt(worldPos);
 
-        if(shootingTimer <= 0)
+        if(shootingTimer <= 0 && currentAmmo > 0)
         {
             canFire = true;
         }
@@ -55,7 +61,27 @@ public class TommyGun : MonoBehaviour {
                 bullet.rigidbody2D.AddForce(transform.forward * 3000f);
                 Destroy(bullet, 1.5f);
             }
+			currentAmmo -= 1;
+			Debug.Log(currentAmmo);
             
         }
+	}
+
+	public void addAmmo(int amount)
+	{
+		if (amount + currentAmmo > maxAmmo) 
+		{
+			currentAmmo = maxAmmo;
+		} 
+		else 
+		{
+			currentAmmo += amount;
+		}
+	}
+
+	public int getCurrentAmmo()
+	{
+		return currentAmmo;
+
 	}
 }
