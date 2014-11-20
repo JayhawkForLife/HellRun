@@ -6,7 +6,7 @@ public class TommyGun : MonoBehaviour {
     public GameObject bulletGo;
     GameObject mainCamera;
     GameObject player;
-    Player pc;
+    PlayerController pc;
     Camera cam;
     public bool canFire { get; private set; }
     float shootingTimer;
@@ -16,16 +16,9 @@ public class TommyGun : MonoBehaviour {
 
 
 	// Use this for initialization
-<<<<<<< HEAD
-	void Start () {
-        canFire = true;
-        shootingTimer = 0;
 
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        player = GameObject.FindGameObjectWithTag("Player");
-        pc = player.gameObject.GetComponent<Player>();
+	
 
-=======
 	void Start () {
 		currentAmmo = maxAmmo;
         canFire = true;
@@ -35,18 +28,19 @@ public class TommyGun : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         pc = player.gameObject.GetComponent<PlayerController>();
 
->>>>>>> origin/master
+
         cam = mainCamera.GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10f;
         Vector3 worldPos = cam.camera.ScreenToWorldPoint(mousePos);
         transform.LookAt(worldPos);
 
-<<<<<<< HEAD
+
         if(shootingTimer <= 0)
         {
             canFire = true;
@@ -57,9 +51,9 @@ public class TommyGun : MonoBehaviour {
             shootingTimer -= Time.deltaTime;
         }
 
-        if(Input.GetButtonDown("Fire1") && canFire)
+        if (Input.GetButtonDown("Fire1") && canFire)
         {
-            if(pc.isFacingRight)
+            if (pc.isFacingRight)
             {
                 GameObject bullet = Instantiate(bulletGo, gameObject.transform.position, Quaternion.identity) as GameObject;
                 Physics2D.IgnoreCollision(bullet.collider2D, player.collider2D);
@@ -73,8 +67,9 @@ public class TommyGun : MonoBehaviour {
                 bullet.rigidbody2D.AddForce(transform.forward * 3000f);
                 Destroy(bullet, 1.5f);
             }
+        }
             
-=======
+
         if(shootingTimer <= 0 && currentAmmo > 0)
         {
             canFire = true;
@@ -104,9 +99,9 @@ public class TommyGun : MonoBehaviour {
 			currentAmmo -= 1;
 			Debug.Log(currentAmmo);
             
->>>>>>> origin/master
+
         }
-	}
+   }
 
 	public void addAmmo(int amount)
 	{

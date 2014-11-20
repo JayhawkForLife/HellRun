@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour {
         currentHealth = maxHealth;
 
         camera = GameObject.FindGameObjectWithTag("MainCamera");
-        startPoint = GameObject.FindGameObjectWithTag("StartPoint");
+        //startPoint = GameObject.FindGameObjectWithTag("StartPoint");
         anim = GetComponent<Animator>();
 	}
 	
