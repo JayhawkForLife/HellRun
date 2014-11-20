@@ -20,11 +20,12 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
             other.gameObject.GetComponent<EnemyHealth>().DecrementHealth();
             int currentHealth = other.gameObject.GetComponent<EnemyHealth>().GetHealth();
+			Debug.Log(currentHealth);
             if(currentHealth == 0)
             {
                 other.gameObject.GetComponent<DogsAI>().isDead = true;
             }
-            
+         
         }
     }
 }

@@ -32,9 +32,62 @@ public class DogsAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 	    if(attackTimer <= 0)
         {
             canAttack = true;
+=======
+	    if(attackTimer <= 0)
+        {
+            canAttack = true;
+        }
+        else
+        {
+            canAttack = false;
+            attackTimer -= Time.deltaTime;
+        }
+	}
+
+    void FixedUpdate()
+    {
+        StartCoroutine(Dead());
+        // Cache the horizontal input.
+        float h = Input.GetAxis("Horizontal");
+        anim.SetFloat("speed", Mathf.Abs(rigidbody2D.velocity.x));
+        // if the dog can see the player, run towards the player
+
+        if(!isDead)
+        {
+            if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+            {
+                speed = 8f;
+                rigidbody2D.velocity = new Vector2(sight.playerPos.direction.x * speed, 0);
+                if (sight.playerPos.direction.magnitude < 1)
+                    sight.playerPos.direction = sight.playerPos.direction.normalized;
+                
+                // Flip dirrection base on which way the enemy is moving 
+                //FlipDirection();
+            }
+            
+            if(Vector2.Distance(transform.position, playerTransform.position) < attackDistance)
+            {
+                if(canAttack)
+                {
+                    Debug.Log("I am attacking u");
+                    speed = 0;
+                    //anim.SetBool("canAttack", true);
+                    player.GetComponent<PlayerHealth>().SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+                    attackTimer += 1f;
+                }
+                
+            }
+            else if (Vector2.Distance(transform.position, playerTransform.position) > attackDistance)
+            {
+                //anim.SetBool("canAttack", false);
+                
+
+            }
+>>>>>>> origin/master
         }
         else
         {

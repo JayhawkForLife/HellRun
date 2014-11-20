@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Respawn()
     {
-        gameObject.transform.position =new Vector2(startPoint.gameObject.transform.position.x,startPoint.gameObject.transform.position.y);
+        gameObject.transform.position = new Vector2(startPoint.gameObject.transform.position.x,startPoint.gameObject.transform.position.y);
         camera.transform.position = new Vector3(startPoint.gameObject.transform.position.x, startPoint.gameObject.transform.position.y, -10f);
         currentHealth = maxHealth;
         anim.SetBool("isDead", false);
@@ -61,6 +61,11 @@ public class PlayerHealth : MonoBehaviour {
         currentHealth -= damage;
 
     }
+
+	public void Heal (int healAmount)
+	{
+		currentHealth += healAmount;
+	}
 
     public int getCurrentHealth()
     {

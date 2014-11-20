@@ -10,7 +10,13 @@ public class TommyGun : MonoBehaviour {
     Camera cam;
     public bool canFire { get; private set; }
     float shootingTimer;
+
+	int maxAmmo = 30;
+	int currentAmmo;
+
+
 	// Use this for initialization
+<<<<<<< HEAD
 	void Start () {
         canFire = true;
         shootingTimer = 0;
@@ -19,6 +25,17 @@ public class TommyGun : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         pc = player.gameObject.GetComponent<Player>();
 
+=======
+	void Start () {
+		currentAmmo = maxAmmo;
+        canFire = true;
+        shootingTimer = 0;
+
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        player = GameObject.FindGameObjectWithTag("Player");
+        pc = player.gameObject.GetComponent<PlayerController>();
+
+>>>>>>> origin/master
         cam = mainCamera.GetComponent<Camera>();
 	}
 	
@@ -29,6 +46,7 @@ public class TommyGun : MonoBehaviour {
         Vector3 worldPos = cam.camera.ScreenToWorldPoint(mousePos);
         transform.LookAt(worldPos);
 
+<<<<<<< HEAD
         if(shootingTimer <= 0)
         {
             canFire = true;
@@ -56,6 +74,55 @@ public class TommyGun : MonoBehaviour {
                 Destroy(bullet, 1.5f);
             }
             
+=======
+        if(shootingTimer <= 0 && currentAmmo > 0)
+        {
+            canFire = true;
         }
+        else
+        {
+            canFire = false;
+            shootingTimer -= Time.deltaTime;
+        }
+
+        if(Input.GetButtonDown("Fire1") && canFire)
+        {
+            if(pc.isFacingRight)
+            {
+                GameObject bullet = Instantiate(bulletGo, gameObject.transform.position, Quaternion.identity) as GameObject;
+                Physics2D.IgnoreCollision(bullet.collider2D, player.collider2D);
+                bullet.rigidbody2D.AddForce(transform.forward * 3000f);
+                Destroy(bullet, 1.5f);
+            }
+            else
+            {
+                GameObject bullet = Instantiate(bulletGo, gameObject.transform.position, Quaternion.identity) as GameObject;
+                Physics2D.IgnoreCollision(bullet.collider2D, player.collider2D);
+                bullet.rigidbody2D.AddForce(transform.forward * 3000f);
+                Destroy(bullet, 1.5f);
+            }
+			currentAmmo -= 1;
+			Debug.Log(currentAmmo);
+            
+>>>>>>> origin/master
+        }
+	}
+
+	public void addAmmo(int amount)
+	{
+		if (amount + currentAmmo > maxAmmo) 
+		{
+			currentAmmo = maxAmmo;
+		} 
+		else 
+		{
+			currentAmmo += amount;
+		}
+	}
+
+	public int getCurrentAmmo()
+	{
+		return currentAmmo;
+
 	}
 }

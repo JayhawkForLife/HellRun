@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 currentPlatformDelta;
     Animator anim;
     PlayerHealth health;
+	TommyGun ammo;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour {
         currentPlatformDelta = Vector2.zero;
         anim = GetComponent<Animator>();
         health = gameObject.GetComponent<PlayerHealth>();
+		ammo = gameObject.GetComponent<TommyGun>();
 	}
 	
 	// Update is called once per frame
