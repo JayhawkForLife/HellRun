@@ -78,7 +78,7 @@ public class DogsAI : MonoBehaviour {
             }
             else if (Vector2.Distance(transform.position, playerTransform.position) > attackDistance)
             {
-                anim.SetBool("canAttack", false);
+                //anim.SetBool("canAttack", false);
                 
 
             }

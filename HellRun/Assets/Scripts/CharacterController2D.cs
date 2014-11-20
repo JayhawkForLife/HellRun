@@ -18,6 +18,8 @@ public class CharacterController2D : MonoBehaviour
     public bool HandleCollisions { get; set; }
     public ControllerParameters2D Parameters { get { return _overideParameters ?? defaultParameters; } }
     public GameObject StandingOn { get; private set; }
+
+    Player player;
     public bool CanJump
     {
         get
@@ -46,8 +48,13 @@ public class CharacterController2D : MonoBehaviour
     private float _verticalDistanceBetweenRays;
     private float _horizontalDistanceBetweenRays;
 
+    public bool isClimbing { get; set; }
+
     public void Awake()
     {
+        isClimbing = false;
+        player = GetComponent<Player>();
+
         HandleCollisions = true;
         playerState = new CharacterState();
         _transform = transform;
@@ -83,8 +90,20 @@ public class CharacterController2D : MonoBehaviour
 
     }
 
+    public void update()
+    {
+        
+    }
+    
     public void LateUpdate()
     {
+        Debug.Log("is climbing: " + isClimbing);
+        if (isClimbing)
+            Parameters.setGravity(0);
+        else
+            Parameters.setGravity(-25);
+        
+        
         _velocity.y += Parameters.gravity * Time.deltaTime;
         Move(velocity * Time.deltaTime);
         jumpAllowed = Parameters.jumpFrequency;

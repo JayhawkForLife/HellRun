@@ -13,7 +13,7 @@ TagManager:
   - Eyes
   - Weakness
   - StartPoint
-  - 
+  - Moving
   - 
   - 
   - 
@@ -66,6 +66,10 @@ TagManager:
   - name: BackDrop
     userID: 4
     uniqueID: 2511236001
+    locked: 0
+  - name: Obstacles
+    userID: 6
+    uniqueID: 560993067
     locked: 0
   - name: Foreground
     userID: 3

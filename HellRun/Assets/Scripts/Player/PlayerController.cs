@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour {
 
     Rigidbody2D rBody2D;
     private Transform groundCheck;
-    private Transform groundChecks;
-    private Transform currentPlatform;
+    public Transform[] platforms;
+    private Transform currentPlatform = null;
+    Vector3 lastPlatformPosition = Vector3.zero;
+    Vector3 currentPlatformDelta;
     Animator anim;
     PlayerHealth health;
 
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 
         rBody2D = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheck");
+        currentPlatformDelta = Vector2.zero;
         anim = GetComponent<Animator>();
         health = gameObject.GetComponent<PlayerHealth>();
 	}
@@ -121,7 +124,8 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        // Handle Moving Platforms
+
+        // Determine how far the platform has moved
         
         
     }
@@ -148,6 +152,19 @@ public class PlayerController : MonoBehaviour {
             other.GetComponentInParent<DogsAI>().isDead = true;
         }
         
+    }
+
+    void OnCollisionEnter2D(Collision2D hit)
+    {
+        if(hit.gameObject.tag == "Moving")
+        {
+            Debug.Log("On moving platform");
+            transform.parent = hit.transform;
+        }
+        else
+        {
+            transform.parent = null;
+        }
     }
 
     

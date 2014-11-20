@@ -6,7 +6,7 @@ public class TommyGun : MonoBehaviour {
     public GameObject bulletGo;
     GameObject mainCamera;
     GameObject player;
-    PlayerController pc;
+    Player pc;
     Camera cam;
     public bool canFire { get; private set; }
     float shootingTimer;
@@ -17,7 +17,7 @@ public class TommyGun : MonoBehaviour {
 
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GameObject.FindGameObjectWithTag("Player");
-        pc = player.gameObject.GetComponent<PlayerController>();
+        pc = player.gameObject.GetComponent<Player>();
 
         cam = mainCamera.GetComponent<Camera>();
 	}
