@@ -4,12 +4,12 @@ using System.Collections;
 public class Ladder : MonoBehaviour {
 
     GameObject player;
-    CharacterController2D characterController;
+    PlayerController pc;
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        characterController = player.GetComponent<CharacterController2D>();
+        pc = player.GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame
@@ -21,9 +21,10 @@ public class Ladder : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            Debug.Log("isClimbing!");
-            characterController.isClimbing = true;
+            pc.isClimbing = true;
             
+            pc.SetGravity(0);
+            Debug.Log("Enter Ladder");
         }
     }
 
@@ -32,8 +33,9 @@ public class Ladder : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            characterController.isClimbing = false;
-            
+            pc.isClimbing = false;
+            pc.SetGravity(1);
+            Debug.Log("Exit Ladder");
         }
     }
 }

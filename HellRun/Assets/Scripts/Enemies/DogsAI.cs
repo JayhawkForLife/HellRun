@@ -31,22 +31,15 @@ public class DogsAI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
-    {
-
-        if (attackTimer <= 0)
+	void Update () {
+	    if(attackTimer <= 0)
         {
             canAttack = true;
-
-            if (attackTimer <= 0)
-            {
-                canAttack = true;
-            }
-            else
-            {
-                canAttack = false;
-                attackTimer -= Time.deltaTime;
-            }
+        }
+        else
+        {
+            canAttack = false;
+            attackTimer -= Time.deltaTime;
         }
 	}
 
@@ -89,16 +82,9 @@ public class DogsAI : MonoBehaviour {
                 
 
             }
-
         }
-        else
-        {
-            canAttack = false;
-            attackTimer -= Time.deltaTime;
-        }
-	}
-
-    
+        
+    }
 
     private void FlipDirection()
     {

@@ -1880,7 +1880,6 @@ MonoBehaviour:
   movingPlatformLayer:
     serializedVersion: 2
     m_Bits: 0
-  platforms: []
 --- !u!50 &869427951
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2631,7 +2630,7 @@ Transform:
   m_Children:
   - {fileID: 1407411649}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!1 &1164672068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,7 +3070,7 @@ Transform:
   - {fileID: 602400741}
   - {fileID: 1798475362}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1397923656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4408,7 +4407,7 @@ Transform:
   m_Children:
   - {fileID: 180613865}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &2036357710
 GameObject:
   m_ObjectHideFlags: 0
