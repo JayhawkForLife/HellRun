@@ -3,10 +3,12 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int maxHealth;
-    public int currentHealth;
+	public int maxHealth;
+	public int currentHealth;
+	public GUITexture healthGUI;
+	public Texture[] images;
+	public Transform testTrans;
 
-    public bool increaseHealth { get; private set; }
     public bool isDead { get; private set; }
 
     GameObject camera;
@@ -14,19 +16,37 @@ public class PlayerHealth : MonoBehaviour {
     Animator anim;
 	// Use this for initialization
 	void Start () {
-        increaseHealth = false;
-        maxHealth = 3;
-        currentHealth = maxHealth;
-
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
-        //startPoint = GameObject.FindGameObjectWithTag("StartPoint");
-        anim = GetComponent<Animator>();
+		maxHealth = 3;
+		currentHealth = maxHealth;
+		testTrans = ((GameObject)Instantiate (healthGUI.gameObject)).transform;
+		
+		camera = GameObject.FindGameObjectWithTag("MainCamera");
+		//startPoint = GameObject.FindGameObjectWithTag("StartPoint");
+		anim = GetComponent<Animator>();
 	}
-	
+
+	public void ModifyHealth(int amount) {
+		Debug.Log ("Modifying : " + amount);
+		for (int i = 0; i < Mathf.Abs (amount); i++){
+			if (amount > 0 && currentHealth < maxHealth){
+				currentHealth++;
+			}
+			else{
+				if (currentHealth > 0) {
+					currentHealth--;
+				}
+			}
+		}
+		UpdateHealth ();
+	}
+
+	public void UpdateHealth() {
+		testTrans.guiTexture.texture = images [currentHealth];
+	}
+
 	// Update is called once per frame
 	void Update () {
-        if (increaseHealth)
-            currentHealth = maxHealth;
+		UpdateHealth ();
         if(currentHealth <= 0)
         {
             KillPlayer();
@@ -58,13 +78,13 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeDamage(int damage)
     {
         Debug.Log("Ouch");
-        currentHealth -= damage;
+		ModifyHealth (-damage);
 
     }
 
 	public void Heal (int healAmount)
 	{
-		currentHealth += healAmount;
+		ModifyHealth (healAmount);
 	}
 
     public int getCurrentHealth()

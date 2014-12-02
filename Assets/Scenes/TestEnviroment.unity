@@ -217,7 +217,7 @@ Transform:
   - {fileID: 1324116321}
   - {fileID: 190936362}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!1 &43875526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletGo: {fileID: 100000, guid: 8c8002cf8ee66704095483ce3f27e014, type: 2}
+  ammoScore: {fileID: 13200000, guid: d83aae58e3a6d9e45af78ad229243f97, type: 2}
+  ammoGUI: {fileID: 13100000, guid: 5254335a6e840ee45afd033c5e58ee9e, type: 2}
 --- !u!1 &739829723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2045,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 0
+  healthGUI: {fileID: 13100000, guid: 2c0f4c1cce99222499d8317603aa91f2, type: 2}
+  images:
+  - {fileID: 2800000, guid: b6b6dcac875eeb5439bc0d23be8fd572, type: 3}
+  - {fileID: 2800000, guid: 30b9c52f4236f6443b11ed067755a9dc, type: 3}
+  - {fileID: 2800000, guid: e0bf2b17777a2f948b6755eed57b8273, type: 3}
+  - {fileID: 2800000, guid: d5dbe5f83839c774089487666d732464, type: 3}
+  testTrans: {fileID: 0}
 --- !u!114 &869427955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,7 +2746,7 @@ Transform:
   m_Children:
   - {fileID: 1097148147}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &1145473434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3347,7 +3356,7 @@ Transform:
   - {fileID: 43875528}
   - {fileID: 1928669890}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
 --- !u!114 &1562825648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3595,7 +3604,7 @@ Transform:
   m_Children:
   - {fileID: 1943064456}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 18
 --- !u!1001 &1711940253
 Prefab:
   m_ObjectHideFlags: 0
@@ -4208,7 +4217,7 @@ Transform:
   m_Children:
   - {fileID: 1040410997}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1942777068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4705,7 +4714,7 @@ Transform:
   - {fileID: 25704306}
   - {fileID: 26464298}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
 --- !u!1001 &2136047759
 Prefab:
   m_ObjectHideFlags: 0
@@ -4777,6 +4786,16 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 67b2f775886d227439130ed1acd54636, type: 2}
+      propertyPath: ammoGUI
+      value: 
+      objectReference: {fileID: 13100000, guid: 5254335a6e840ee45afd033c5e58ee9e,
+        type: 2}
+    - target: {fileID: 11400000, guid: 67b2f775886d227439130ed1acd54636, type: 2}
+      propertyPath: ammoScore
+      value: 
+      objectReference: {fileID: 13200000, guid: d83aae58e3a6d9e45af78ad229243f97,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 5000000, guid: 67b2f775886d227439130ed1acd54636, type: 2}
     - {fileID: 11400002, guid: 67b2f775886d227439130ed1acd54636, type: 2}

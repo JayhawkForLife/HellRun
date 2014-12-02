@@ -15,14 +15,20 @@ public class TommyGun : MonoBehaviour {
 	int currentAmmo;
 
 
+	Transform ammoTrans;
+	public GUIText ammoScore;
+	public GUITexture ammoGUI;
+
 	// Use this for initialization
 
 	
 
 	void Start () {
+		Instantiate (ammoGUI.gameObject);
+		ammoTrans = ((GameObject)Instantiate (ammoScore.gameObject)).transform;
 		currentAmmo = maxAmmo;
-        canFire = true;
-        shootingTimer = 0;
+		canFire = true;
+		shootingTimer = 0;
 
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GameObject.FindGameObjectWithTag("Player");
@@ -35,6 +41,7 @@ public class TommyGun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+		ammoTrans.guiText.text = "" + currentAmmo + "/" + maxAmmo;
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10f;
         Vector3 worldPos = cam.camera.ScreenToWorldPoint(mousePos);
