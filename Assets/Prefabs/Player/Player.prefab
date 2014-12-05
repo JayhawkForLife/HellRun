@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletGo: {fileID: 100000, guid: 8c8002cf8ee66704095483ce3f27e014, type: 2}
+  ammoScore: {fileID: 0}
+  ammoGUI: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +192,7 @@ MonoBehaviour:
   movingPlatformLayer:
     serializedVersion: 2
     m_Bits: 0
+  platforms: []
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -208,7 +211,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 1024582385
+  m_SortingLayerID: 199997145
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: a5729bb5f0781e542a10c9138f4e0ec0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -19,10 +19,15 @@ public class DropTrap : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Player") 
+
+		// Only kill played if object lands on player while falling or if the object are spikes
+		if (this.tag != "Ground" || this.rigidbody2D.isKinematic == false) 
 		{
-			player.gameObject.GetComponent<PlayerHealth> ().TakeDamage (3);	
-		} 
+			if (coll.gameObject.tag == "Player") 
+			{
+				player.gameObject.GetComponent<PlayerHealth> ().TakeDamage (3);	
+			} 
+		}
 
 		if (coll.gameObject.tag == "Ground") 
 		{

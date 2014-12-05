@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerHealth.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Obstacles\DropTrap.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\PlayerHealth.cs" Line="72" Column="1" />
-      <File FileName="Assets\Scripts\Player\TommyGun.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Obstacles\DropTrap.cs" Line="26" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
