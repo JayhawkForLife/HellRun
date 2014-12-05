@@ -30,6 +30,7 @@ public class BuzzSaw : MonoBehaviour {
 			int currentHealth = coll.gameObject.GetComponent<EnemyHealth>().GetHealth();
 			if(currentHealth == 0)
 			{
+				//need to kill all enemies not just dog
 				coll.gameObject.GetComponent<DogsAI>().isDead = true;
 			}
 		}
