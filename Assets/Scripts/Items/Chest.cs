@@ -32,7 +32,7 @@ public class Chest : MonoBehaviour {
 			anim.SetBool("openChest", openChest);
 
 			alreadyOpened = true;
-			Debug.Log("Player opened chest");
+			//Debug.Log("Player opened chest");
 
 			item = Random.Range (0, numberOfItems);
 

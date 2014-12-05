@@ -62,15 +62,18 @@ public class PlayerHealth : MonoBehaviour {
     private IEnumerator KillPlayerCo()
     {
        anim.SetBool("isDead", true);
-       yield return new WaitForSeconds(2f);
+       yield return new WaitForSeconds(1f);
        Respawn();
         
     }
 
     public void Respawn()
     {
-        gameObject.transform.position = new Vector2(startPoint.gameObject.transform.position.x,startPoint.gameObject.transform.position.y);
-        camera.transform.position = new Vector3(startPoint.gameObject.transform.position.x, startPoint.gameObject.transform.position.y, -10f);
+        //gameObject.transform.position = new Vector2(startPoint.gameObject.transform.position.x,startPoint.gameObject.transform.position.y);
+		gameObject.transform.position = new Vector2(56,307);
+		camera.transform.position = new Vector3(56, 307, -10f);
+
+		//camera.transform.position = new Vector3(startPoint.gameObject.transform.position.x, startPoint.gameObject.transform.position.y, -10f);
         currentHealth = maxHealth;
         anim.SetBool("isDead", false);
     }

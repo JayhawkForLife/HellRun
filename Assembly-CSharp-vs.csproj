@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\Obstacles\BuzzSaw.cs" />
      <Compile Include="Assets\Scripts\Obstacles\DropTrap.cs" />
      <Compile Include="Assets\Scripts\Obstacles\DropTrapTile.cs" />
+     <Compile Include="Assets\Scripts\Obstacles\Portal.cs" />
      <Compile Include="Assets\Scripts\PathDefinition.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Player\Bullet.cs" />
