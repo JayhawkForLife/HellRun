@@ -12,7 +12,11 @@ public class PlayerHealth : MonoBehaviour {
     public bool isDead { get; private set; }
 
     GameObject camera;
-    GameObject startPoint;
+    
+	public GameObject currentSpawnPoint;
+	int spawnHeight = 3;
+
+
     Animator anim;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +25,9 @@ public class PlayerHealth : MonoBehaviour {
 		testTrans = ((GameObject)Instantiate (healthGUI.gameObject)).transform;
 		
 		camera = GameObject.FindGameObjectWithTag("MainCamera");
-		//startPoint = GameObject.FindGameObjectWithTag("StartPoint");
+
+		currentSpawnPoint = GameObject.FindGameObjectWithTag("StartPoint");
+
 		anim = GetComponent<Animator>();
 	}
 
@@ -51,7 +57,6 @@ public class PlayerHealth : MonoBehaviour {
         {
             KillPlayer();
         }
-        
 	}
 
     private void KillPlayer()
@@ -69,13 +74,12 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Respawn()
     {
-        //gameObject.transform.position = new Vector2(startPoint.gameObject.transform.position.x,startPoint.gameObject.transform.position.y);
-		gameObject.transform.position = new Vector2(56,307);
-		camera.transform.position = new Vector3(56, 307, -10f);
+		anim.SetBool("isDead", false);
 
-		//camera.transform.position = new Vector3(startPoint.gameObject.transform.position.x, startPoint.gameObject.transform.position.y, -10f);
-        currentHealth = maxHealth;
-        anim.SetBool("isDead", false);
+		gameObject.transform.position = new Vector2(currentSpawnPoint.gameObject.transform.position.x,currentSpawnPoint.gameObject.transform.position.y + spawnHeight);
+		camera.transform.position = new Vector3(currentSpawnPoint.gameObject.transform.position.x, currentSpawnPoint.gameObject.transform.position.y, -10f);
+        
+		currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
@@ -94,4 +98,9 @@ public class PlayerHealth : MonoBehaviour {
     {
         return currentHealth; 
     }
+
+	public void setSpawnPoint(GameObject CP)
+	{
+		currentSpawnPoint = CP;
+	}
 }

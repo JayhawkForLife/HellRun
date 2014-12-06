@@ -9,7 +9,7 @@ TagManager:
   - Ladder
   - Enemy
   - Ground
-  - 
+  - StartPoint
   - Weakness
   - 
   Builtin Layer 0: Default

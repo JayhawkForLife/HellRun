@@ -23,7 +23,7 @@ public class Portal : MonoBehaviour {
 		{
 
 			//Debug.Log("Player entered portal");
-			player.transform.position = new Vector2(Destination.transform.position.x,Destination.transform.position.y);
+			player.transform.position = new Vector2(Destination.transform.position.x,Destination.transform.position.y+2);
 			camera.transform.position = new Vector3(Destination.transform.position.x,Destination.transform.position.y, -10f);
 		}
 	}
