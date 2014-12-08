@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
+  - 50: {fileID: 5000000}
   m_Layer: 0
   m_Name: Ammo2
   m_TagString: Untagged
@@ -58,6 +59,21 @@ Transform:
   - {fileID: 400000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5000000
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!58 &5800000
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -80,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a63c8a65a1f424f91d111ec47b0daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoAmount: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

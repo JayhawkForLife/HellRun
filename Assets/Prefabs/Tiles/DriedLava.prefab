@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: DriedLavaGraphic
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200002}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: BlackBackDrop
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: DriedLava
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -13,6 +13,7 @@ public class CheckPoint : MonoBehaviour
 
 	public bool startCP = false;
 	bool playerOnCP = false;
+	bool alreadyTouched = false;
 
 
 	
@@ -20,14 +21,14 @@ public class CheckPoint : MonoBehaviour
 		
 		anim = GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag("Player");
-		//pHealth = GameObject.Find ("PlayerHealth");
 
 	}
 
 	void Update () 
 	{
-		if (playerOnCP) 
+		if (playerOnCP && !alreadyTouched) 
 		{
+			alreadyTouched =  true;
 			startCP = true;
 			anim.SetBool ("startCP", startCP);
 

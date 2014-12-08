@@ -16,10 +16,13 @@ public class PlayerHealth : MonoBehaviour {
 	public GameObject currentSpawnPoint;
 	int spawnHeight = 3;
 
+	public bool hasSoul = true;
+	bool canDie = true;
 
     Animator anim;
 	// Use this for initialization
 	void Start () {
+
 		maxHealth = 3;
 		currentHealth = maxHealth;
 		testTrans = ((GameObject)Instantiate (healthGUI.gameObject)).transform;
@@ -66,20 +69,40 @@ public class PlayerHealth : MonoBehaviour {
 
     private IEnumerator KillPlayerCo()
     {
-       anim.SetBool("isDead", true);
-       yield return new WaitForSeconds(1f);
-       Respawn();
-        
+       	anim.SetBool("isDead", true);
+
+		if (canDie) 
+		{
+
+			if (hasSoul) 
+			{
+				Debug.Log ("Dead WITH soul");
+				this.GetComponentInChildren<PlayerDeath> ().setDeath ();
+				hasSoul = false;
+			} 
+			else 
+			{
+				Debug.Log ("Died WITHOUT soul");
+				currentSpawnPoint = GameObject.FindGameObjectWithTag ("StartPoint");
+			}
+			canDie = false;
+		}
+		yield return new WaitForSeconds(1f);
+
+		Respawn();
+
+
     }
 
     public void Respawn()
     {
 		anim.SetBool("isDead", false);
+		canDie = true;
 
 		gameObject.transform.position = new Vector2(currentSpawnPoint.gameObject.transform.position.x,currentSpawnPoint.gameObject.transform.position.y + spawnHeight);
 		camera.transform.position = new Vector3(currentSpawnPoint.gameObject.transform.position.x, currentSpawnPoint.gameObject.transform.position.y, -10f);
         
-		currentHealth = maxHealth;
+		currentHealth = 1;
     }
 
     public void TakeDamage(int damage)
@@ -103,4 +126,5 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		currentSpawnPoint = CP;
 	}
+	
 }
