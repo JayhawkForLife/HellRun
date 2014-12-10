@@ -9,6 +9,8 @@ public class Chest : MonoBehaviour {
 	int numberOfItems = 3;
 	int item;
 
+	public AudioClip openSound;
+
 	public GameObject health;
 	public GameObject ammo2;
 	public GameObject bomb;
@@ -28,6 +30,10 @@ public class Chest : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) && playerOnChest && !alreadyOpened) 
 		{
+			if (openSound != null) 
+			{
+				AudioSource.PlayClipAtPoint (openSound,transform.position);		
+			}
 			openChest = true;
 			anim.SetBool("openChest", openChest);
 

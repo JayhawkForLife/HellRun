@@ -8,6 +8,8 @@ public class DropTrapTile : MonoBehaviour {
 	bool alreadyChanged = false;
 	//public GameObject trap;
 	public GameObject[] traps;
+	bool soundPlayed = false;
+	public AudioClip dropSound;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +31,16 @@ public class DropTrapTile : MonoBehaviour {
 			for(int i = 0; i < traps.Length; i++)
 			{
 				traps[i].GetComponent("DropTrap");
+				if (soundPlayed != true)
+				{
+					if (dropSound != null) 
+					{
+						AudioSource.PlayClipAtPoint (dropSound,transform.position);		
+					}
+					soundPlayed = true;
+				}
 				traps[i].rigidbody2D.isKinematic = false;
+				soundPlayed = false;
 			}
 		}
 	}

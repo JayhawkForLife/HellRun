@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d354cc25097bff1429ad3c2fc772113b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buzzSound: {fileID: 8300000, guid: 9e003e60d3c58a8479e347f67d74e170, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

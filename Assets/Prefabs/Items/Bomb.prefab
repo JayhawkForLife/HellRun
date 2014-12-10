@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6176285fb6f3287449f08b287c4ce5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombSound: {fileID: 8300000, guid: 11f681b5b1df8ec47a24acde5bd92323, type: 3}
   blastRadius: 1
 --- !u!212 &21200000
 SpriteRenderer:

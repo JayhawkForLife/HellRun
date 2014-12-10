@@ -355,7 +355,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 85f809e6d014ce24d91b87e5edee52ca, type: 2}
       propertyPath: m_RootOrder
-      value: 41
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 85f809e6d014ce24d91b87e5edee52ca, type: 2}
       propertyPath: path
@@ -574,6 +574,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0eac31ddcac86b548bf2010819c94289, type: 2}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d51d73f05ddb68d49a1813f5feb60c10, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0eac31ddcac86b548bf2010819c94289, type: 2}
   m_RootGameObject: {fileID: 2041023664}
@@ -2293,7 +2297,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b891a56e07dd0f4a8623a95d5c26709, type: 2}
       propertyPath: m_RootOrder
-      value: 46
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9b891a56e07dd0f4a8623a95d5c26709, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2733,6 +2737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180c7ab6e03d3a44b862e03c6c1f9068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openSound: {fileID: 8300000, guid: d51d73f05ddb68d49a1813f5feb60c10, type: 3}
   health: {fileID: 100000, guid: ddd435618a6b7c84eacd7ed6e38e927b, type: 2}
   ammo2: {fileID: 100002, guid: c4efe3e73820bdf4fa9e6e56b0a8b261, type: 2}
   bomb: {fileID: 100000, guid: f6c43c108de2faf4886af3e9323391d1, type: 2}
@@ -2951,6 +2956,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4aa985adb1391ce4883d5e19568b2fc2, type: 2}
+      propertyPath: monsterSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fbeb9f17a6930f44f93e02bc50b3ca8f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4aa985adb1391ce4883d5e19568b2fc2, type: 2}
   m_RootGameObject: {fileID: 40677829}
@@ -3340,6 +3349,8 @@ MonoBehaviour:
   currentAmmo: 0
   ammoScore: {fileID: 13200000, guid: d83aae58e3a6d9e45af78ad229243f97, type: 2}
   ammoGUI: {fileID: 13100000, guid: 5254335a6e840ee45afd033c5e58ee9e, type: 2}
+  gunSound: {fileID: 8300000, guid: c534824fb8c640e4e9c92653ba8a60bd, type: 3}
+  reloadSound: {fileID: 8300000, guid: 8287e6ce5540bfa48b17f15f5023de6c, type: 3}
 --- !u!1 &725678099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,6 +3715,7 @@ MonoBehaviour:
   - {fileID: 1942777066}
   - {fileID: 1598038009}
   - {fileID: 773311230}
+  dropSound: {fileID: 8300000, guid: 36ae7803bdef4104e93b1858e2f394f3, type: 3}
 --- !u!61 &794781233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3814,6 +3826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {fileID: 1847566096}
+  warpSound: {fileID: 8300000, guid: c8e725fc4ec7b8745a2d5a7b4fb66ba0, type: 3}
 --- !u!60 &818351315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4238,6 +4251,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: e0bf2b17777a2f948b6755eed57b8273, type: 3}
   - {fileID: 2800000, guid: d5dbe5f83839c774089487666d732464, type: 3}
   testTrans: {fileID: 0}
+  healSound: {fileID: 8300000, guid: 5c5ec3fbffa13704693491c1ec4eb6ea, type: 3}
+  hurtSound: {fileID: 8300000, guid: 3a84485fb7a97e14cb44e4b6ff2e75c0, type: 3}
+  dieSound: {fileID: 8300000, guid: 882172f610eb3f64a94feb2446e53243, type: 3}
   currentSpawnPoint: {fileID: 97726011}
   hasSoul: 1
 --- !u!114 &869427955
@@ -4616,6 +4632,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 37
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05acd8c376cc59c4a8e304c6929668b8, type: 2}
+      propertyPath: spikeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 36ae7803bdef4104e93b1858e2f394f3, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05acd8c376cc59c4a8e304c6929668b8, type: 2}
   m_RootGameObject: {fileID: 773311230}
@@ -4811,6 +4831,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 15892103c7a148c4ba7604dd1c93ad89, type: 2}
+      propertyPath: warpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c8e725fc4ec7b8745a2d5a7b4fb66ba0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15892103c7a148c4ba7604dd1c93ad89, type: 2}
   m_RootGameObject: {fileID: 680351081}
@@ -4857,7 +4881,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b891a56e07dd0f4a8623a95d5c26709, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9b891a56e07dd0f4a8623a95d5c26709, type: 2}
       propertyPath: traps.Array.data[0]
@@ -5894,6 +5918,10 @@ Prefab:
       propertyPath: Destination
       value: 
       objectReference: {fileID: 1758845889}
+    - target: {fileID: 11400000, guid: c231f1cf9b5bd6241a27e9762d03fd55, type: 2}
+      propertyPath: warpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c8e725fc4ec7b8745a2d5a7b4fb66ba0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c231f1cf9b5bd6241a27e9762d03fd55, type: 2}
   m_RootGameObject: {fileID: 1603920455}
@@ -6533,6 +6561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {fileID: 752520134}
+  warpSound: {fileID: 8300000, guid: c8e725fc4ec7b8745a2d5a7b4fb66ba0, type: 3}
 --- !u!60 &1389318915
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6706,6 +6735,7 @@ GameObject:
   - 124: {fileID: 1395658421}
   - 81: {fileID: 1395658420}
   - 114: {fileID: 1395658425}
+  - 82: {fileID: 1395658426}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6790,6 +6820,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTarget: {fileID: 869427947}
+--- !u!82 &1395658426
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395658419}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 3ba09ad054056c048a010dd67ba7d59b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .00999999978
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1397210490
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,6 +6976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  monsterSound: {fileID: 8300000, guid: fbeb9f17a6930f44f93e02bc50b3ca8f, type: 3}
 --- !u!114 &1400856323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7469,6 +7558,10 @@ Prefab:
       propertyPath: damage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2c0764c9a0aa32b4d8ec75c0ac3400d3, type: 2}
+      propertyPath: monsterSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fbeb9f17a6930f44f93e02bc50b3ca8f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c0764c9a0aa32b4d8ec75c0ac3400d3, type: 2}
   m_RootGameObject: {fileID: 1709352511}
@@ -7900,6 +7993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {fileID: 1758845889}
+  warpSound: {fileID: 8300000, guid: c8e725fc4ec7b8745a2d5a7b4fb66ba0, type: 3}
 --- !u!60 &1603920457
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9712,6 +9806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  monsterSound: {fileID: 8300000, guid: fbeb9f17a6930f44f93e02bc50b3ca8f, type: 3}
 --- !u!114 &1943064458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9903,6 +9998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180c7ab6e03d3a44b862e03c6c1f9068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openSound: {fileID: 0}
   health: {fileID: 100000, guid: ddd435618a6b7c84eacd7ed6e38e927b, type: 2}
   ammo2: {fileID: 100002, guid: c4efe3e73820bdf4fa9e6e56b0a8b261, type: 2}
   bomb: {fileID: 100000, guid: f6c43c108de2faf4886af3e9323391d1, type: 2}
@@ -10063,6 +10159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d354cc25097bff1429ad3c2fc772113b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buzzSound: {fileID: 8300000, guid: 9e003e60d3c58a8479e347f67d74e170, type: 3}
 --- !u!4 &1970832103
 Transform:
   m_ObjectHideFlags: 0
@@ -10419,6 +10516,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 15892103c7a148c4ba7604dd1c93ad89, type: 2}
+      propertyPath: warpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c8e725fc4ec7b8745a2d5a7b4fb66ba0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15892103c7a148c4ba7604dd1c93ad89, type: 2}
   m_RootGameObject: {fileID: 414717587}
@@ -10912,6 +11013,7 @@ MonoBehaviour:
   changeObstacle: 0
   traps:
   - {fileID: 546805588}
+  dropSound: {fileID: 8300000, guid: 36ae7803bdef4104e93b1858e2f394f3, type: 3}
 --- !u!61 &2114772526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11068,6 +11170,14 @@ Prefab:
       value: 
       objectReference: {fileID: 13200000, guid: d83aae58e3a6d9e45af78ad229243f97,
         type: 2}
+    - target: {fileID: 11400000, guid: 67b2f775886d227439130ed1acd54636, type: 2}
+      propertyPath: gunSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c534824fb8c640e4e9c92653ba8a60bd, type: 3}
+    - target: {fileID: 11400000, guid: 67b2f775886d227439130ed1acd54636, type: 2}
+      propertyPath: reloadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8287e6ce5540bfa48b17f15f5023de6c, type: 3}
     m_RemovedComponents:
     - {fileID: 5000000, guid: 67b2f775886d227439130ed1acd54636, type: 2}
     - {fileID: 11400002, guid: 67b2f775886d227439130ed1acd54636, type: 2}

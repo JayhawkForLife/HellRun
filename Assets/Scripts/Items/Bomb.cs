@@ -6,8 +6,9 @@ public class Bomb : MonoBehaviour {
 	GameObject player;
 	Animator anim;
 
+	public AudioClip bombSound;
 	public float blastRadius = 1f;
-
+	bool playingSound = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +19,13 @@ public class Bomb : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("End")) 
+		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Explosion") && playingSound != true)
 		{
+			playingSound = true;
+			if (bombSound != null) 
+			{
+				AudioSource.PlayClipAtPoint (bombSound,transform.position);		
+			}
 			Collider2D[] colliders = Physics2D.OverlapCircleAll (transform.position,blastRadius);
 			foreach(Collider2D col in colliders){
 				if (col.tag == "Player")
@@ -29,7 +34,7 @@ public class Bomb : MonoBehaviour {
 				}
 			}
 			Destroy(gameObject);
-
+			playingSound = false;
 		}
 	}
 

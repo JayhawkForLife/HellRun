@@ -7,6 +7,7 @@ public class Portal : MonoBehaviour {
 	GameObject camera;
 
 	public GameObject Destination;
+	public AudioClip warpSound;
 
 	bool playerOnPortal = false; // Checks if player is touching the chest
 
@@ -23,6 +24,10 @@ public class Portal : MonoBehaviour {
 		{
 
 			//Debug.Log("Player entered portal");
+			if (warpSound != null) 
+			{
+				AudioSource.PlayClipAtPoint (warpSound,transform.position);		
+			}
 			player.transform.position = new Vector2(Destination.transform.position.x,Destination.transform.position.y+2);
 			camera.transform.position = new Vector3(Destination.transform.position.x,Destination.transform.position.y, -10f);
 		}

@@ -9,6 +9,10 @@ public class PlayerHealth : MonoBehaviour {
 	public Texture[] images;
 	public Transform testTrans;
 
+	public AudioClip healSound;
+	public AudioClip hurtSound;
+	public AudioClip dieSound;
+
     public bool isDead { get; private set; }
 
     GameObject camera;
@@ -70,7 +74,6 @@ public class PlayerHealth : MonoBehaviour {
     private IEnumerator KillPlayerCo()
     {
        	anim.SetBool("isDead", true);
-
 		if (canDie) 
 		{
 
@@ -84,6 +87,10 @@ public class PlayerHealth : MonoBehaviour {
 			{
 				Debug.Log ("Died WITHOUT soul");
 				currentSpawnPoint = GameObject.FindGameObjectWithTag ("StartPoint");
+			}
+			if (dieSound != null) 
+			{
+				AudioSource.PlayClipAtPoint (dieSound, transform.position);
 			}
 			canDie = false;
 		}
@@ -107,13 +114,20 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Ouch");
+		if (hurtSound != null && (currentHealth - damage > 0)) 
+		{
+			AudioSource.PlayClipAtPoint (hurtSound, transform.position);
+		}
 		ModifyHealth (-damage);
 
     }
 
 	public void Heal (int healAmount)
 	{
+		if (healSound != null) 
+		{
+			AudioSource.PlayClipAtPoint (healSound, transform.position);
+		}
 		ModifyHealth (healAmount);
 	}
 

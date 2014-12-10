@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeObstacle: 0
   traps: []
+  dropSound: {fileID: 8300000, guid: 36ae7803bdef4104e93b1858e2f394f3, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

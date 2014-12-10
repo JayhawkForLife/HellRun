@@ -19,6 +19,8 @@ public class TommyGun : MonoBehaviour {
 	public GUIText ammoScore;
 	public GUITexture ammoGUI;
 
+	public AudioClip gunSound;
+	public AudioClip reloadSound;
 	// Use this for initialization
 
 	
@@ -59,7 +61,11 @@ public class TommyGun : MonoBehaviour {
 
         if(Input.GetButtonDown("Fire1") && canFire)
         {
-            if(pc.isFacingRight)
+			if (gunSound != null)
+			{
+				AudioSource.PlayClipAtPoint(gunSound,transform.position);
+			}
+			if(pc.isFacingRight)
             {
                 GameObject bullet = Instantiate(bulletGo, gameObject.transform.position, Quaternion.identity) as GameObject;
                 Physics2D.IgnoreCollision(bullet.collider2D, player.collider2D);
@@ -88,6 +94,10 @@ public class TommyGun : MonoBehaviour {
 		} 
 		else 
 		{
+			if (reloadSound != null)
+			{
+				AudioSource.PlayClipAtPoint(reloadSound, transform.position);
+			}
 			currentAmmo += amount;
 		}
 	}
