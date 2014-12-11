@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  monsterSound: {fileID: 8300000, guid: fbeb9f17a6930f44f93e02bc50b3ca8f, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b09d630ec79ed243b0fa9445e10826e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  biteSound: {fileID: 8300000, guid: efc34e8708b85af4f829f6b505e3e265, type: 3}
   damage: 0
 --- !u!114 &11400004
 MonoBehaviour:

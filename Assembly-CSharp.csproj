@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\Player\Soul.cs" />
      <Compile Include="Assets\Scripts\Player\TommyGun.cs" />
      <Compile Include="Assets\Scripts\Stomp.cs" />
+     <Compile Include="Assets\Scripts\WalkSound.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

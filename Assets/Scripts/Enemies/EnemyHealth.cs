@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void DecrementHealth()
     {
-		if (monsterSound != null) 
+		if (monsterSound != null && health > 0) 
 		{
 			AudioSource.PlayClipAtPoint(monsterSound,transform.position);		
 		}

@@ -14,7 +14,6 @@ public class Player : MonoBehaviour {
     public float speedAccelerationInAir = 5f;
 
     public bool isDead { get; private set; }
-    
 
     Animator anim;
     float movementFactor;
@@ -37,10 +36,13 @@ public class Player : MonoBehaviour {
         movementFactor = controller.playerState.isGrounded ? speedAccelerationOnGround : speedAccelerationInAir;
         controller.SetHorizontalForce(Mathf.Lerp(controller.velocity.x, normalizeHorizontalSpeed * maxSpeed, Time.deltaTime * movementFactor));
         
-            
-        
-        
+		if ((Input.GetKey("a") || Input.GetKey ("d")) && (controller.playerState.isGrounded ==true) && !isDead) {
+			audio.volume = 1;
+		}
 
+		else {
+			audio.volume = 0;
+		}
         
     }
 

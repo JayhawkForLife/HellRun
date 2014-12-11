@@ -1,15 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\DogsAI.cs">
     <Files>
-      <File FileName="Assets\Scripts\CharacterController2D.cs" Line="202" Column="23" />
-      <File FileName="Assets\Scripts\Items\Chest.cs" Line="48" Column="42" />
-      <File FileName="Assets\Scripts\Player\PlayerHealth.cs" Line="100" Column="9" />
-      <File FileName="Assets\Scripts\Obstacles\BuzzSaw.cs" Line="23" Column="9" />
-      <File FileName="Assets\Scripts\Items\Ammo.cs" Line="45" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerDeath.cs" Line="35" Column="3" />
-      <File FileName="Assets\Scripts\Player\Soul.cs" Line="22" Column="1" />
-      <File FileName="Assets\Scripts\CheckPoint.cs" Line="30" Column="4" />
+      <File FileName="Assets\Scripts\Player\PlayerHealth.cs" Line="34" Column="29" />
+      <File FileName="Assets\Scripts\Player.cs" Line="34" Column="27" />
+      <File FileName="Assets\Scripts\Enemies\DogsAI.cs" Line="85" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

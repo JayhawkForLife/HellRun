@@ -19,16 +19,24 @@ public class CharacterController2D : MonoBehaviour
     public ControllerParameters2D Parameters { get { return _overideParameters ?? defaultParameters; } }
     public GameObject StandingOn { get; private set; }
 
+	public AudioClip jumpSound;
+	public bool jumpSoundPlaying = false;
+
     Player player;
     public bool CanJump
     {
         get
         {
             if (Parameters.jumpRestrictions == ControllerParameters2D.JumpRestrictions.JumpAnywhere)
+			{
                 return jumpAllowed < 0;
-            if (Parameters.jumpRestrictions == ControllerParameters2D.JumpRestrictions.OnGround)
-                return playerState.isGrounded;
-            return false;
+			}
+			if (Parameters.jumpRestrictions == ControllerParameters2D.JumpRestrictions.OnGround)
+			{
+				jumpSoundPlaying = false;
+				return playerState.isGrounded;
+			}
+			return false;
         }
     }
     public Vector3 PlatformVelocity { get; private set; }
@@ -85,6 +93,11 @@ public class CharacterController2D : MonoBehaviour
     }
     public void Jump()
     {
+		if (jumpSound != null && jumpSoundPlaying == false)
+		{
+			jumpSoundPlaying = true;
+			AudioSource.PlayClipAtPoint (jumpSound,transform.position);
+		}
         AddForce(new Vector2(0, Parameters.JumpMagnitude));
         jumpAllowed = Parameters.jumpFrequency;
 
@@ -92,7 +105,6 @@ public class CharacterController2D : MonoBehaviour
 
     public void update()
     {
-        
     }
     
     public void LateUpdate()

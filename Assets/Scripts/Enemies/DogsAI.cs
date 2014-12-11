@@ -14,6 +14,8 @@ public class DogsAI : MonoBehaviour {
     float attackDistance = 5f;
     float attackTimer;
 
+	public AudioClip biteSound;
+
     public int damage;
 
     public bool isFacingRight { get; private set; }
@@ -77,7 +79,11 @@ public class DogsAI : MonoBehaviour {
                 {
                     Debug.Log("I am attacking u");
                     speed = 0;
-                    //anim.SetBool("canAttack", true);
+					if (biteSound != null)
+					{
+						AudioSource.PlayClipAtPoint (biteSound,transform.position);
+					}
+					//anim.SetBool("canAttack", true);
                     player.GetComponent<PlayerHealth>().SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
                     attackTimer += 1f;
                 }
